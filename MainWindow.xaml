@@ -1,0 +1,58 @@
+﻿<Window x:Class="collections.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:collections"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0">ФИО</Label>
+        <TextBox Grid.Column="0" Grid.Row="0" Name="FIO" Width="150" Height="30"/>
+        
+        <Label Grid.Column="0" Grid.Row="1">Улица</Label>
+        <TextBox Grid.Column="0" Grid.Row="1" Name="Street" Width="150" Height="30"/>
+
+        <Label Grid.Column="0" Grid.Row="2">Дом</Label>
+        <TextBox Grid.Column="0" Grid.Row="2" Name="Home" Width="150" Height="30"/>
+
+        <Label Grid.Column="0" Grid.Row="3">Квартира</Label>
+        <TextBox Grid.Column="0" Grid.Row="3" Name="Apartment" Width="150" Height="30"/>
+
+        <Button Grid.Column="0" Grid.Row="4" Content="Добавить" Width="100" Height="36" Click="ButtonAdd"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="Сортировать" Width="100" Height="36" Click="ButtonSort"/>
+
+        <DataGrid Grid.Column="0" Grid.Row="5" Name="ListEmployees1" AutoGenerateColumns="False" HorizontalGridLinesBrush="DarkGray"
+    RowBackground="LightGray" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding ColFIO}" Width="100" />
+                <DataGridTextColumn Header="Улица" Binding="{Binding ColStreet}" Width="100" />
+                <DataGridTextColumn Header="Дом" Binding="{Binding ColHome}" Width="100" />
+                <DataGridTextColumn Header="Квартира" Binding="{Binding ColApartment}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Column="1" Grid.Row="5" Name="ListEmployees2" AutoGenerateColumns="False" HorizontalGridLinesBrush="DarkGray"
+    RowBackground="LightGray" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding ColFIO}" Width="100" />
+                <DataGridTextColumn Header="Улица" Binding="{Binding ColStreet}" Width="100" />
+                <DataGridTextColumn Header="Дом" Binding="{Binding ColHome}" Width="100" />
+                <DataGridTextColumn Header="Квартира" Binding="{Binding ColApartment}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="0" Grid.Row="6" Content="Закрыть" HorizontalAlignment="Center" Width="100" Height="36" Grid.ColumnSpan="3"  Click="ButtonClick"/>
+    </Grid>
+</Window>
